@@ -4,9 +4,13 @@
 
 # Special thanks to 
 [Andrew Thomas](https://github.com/andrewt3000)  
+
 [Keon Kim](https://github.com/keonkim)  
-[Nam Vu](https://github.com/ZuzooVn) 
+
+[Nam Vu](https://github.com/ZuzooVn)
+
 [Denny Britz](https://github.com/dennybritz) 
+
 [Flood Sung](https://github.com/songrotek)
 
 # ------------------------------------------------------------------
