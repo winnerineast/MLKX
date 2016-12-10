@@ -2,35 +2,28 @@
 
 ### Hello, this is winnerineast. I believe the better future is Human Being + Machine and I'm working on it in order to make it happen. Here is the inventory for all kinds of knowledges I collected from internet without any sign-in.
 
-# Special thanks to 
-[Andrew Thomas](https://github.com/andrewt3000)  
+# Special and equivalent thanks to (I just appended the name at the tail when I leverage or borrow his/her information)
+#### [Andrew Thomas](https://github.com/andrewt3000)  
+#### [Keon Kim](https://github.com/keonkim)
+#### [Nam Vu](https://github.com/ZuzooVn)
+#### [Denny Britz](https://github.com/dennybritz) 
+#### [Flood Sung](https://github.com/songrotek)
 
-[Keon Kim](https://github.com/keonkim)  
+# Each category becomes longer and longer, I have to use multiple files to contain them. And here I just show you the structure and linkages to the respective files.
 
-[Nam Vu](https://github.com/ZuzooVn)
+## [Nodes]()
+- [Andrew Thomas notes on neural networks](https://github.com/andrewt3000/MachineLearning/blob/master/neuralNets.md)  
 
-[Denny Britz](https://github.com/dennybritz) 
+## [Courses]()
+- [Kyunghyun Cho's NLP course in NYU](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
+- [Stanford Natural Language Processing](https://www.coursera.org/learn/nlp)  Intro NLP course with videos. This has **no deep learning**. But it is a good primer for traditional nlp.
+- [Stanford CS 224D: Deep Learning for NLP class](http://cs224d.stanford.edu/syllabus.html)  
+- [Richard Socher](https://scholar.google.com/citations?user=FaOcyfMAAAAJ&hl=en). (2016)  Class with syllabus, and slides. Videos: [2015 lectures](https://www.youtube.com/channel/UCsGC3XXF1ThHwtDo18d7WVw/videos) / [2016 lectures](https://www.youtube.com/playlist?list=PLcGUo322oqu9n4i0X3cRJgKyVy7OkDdoi)   
 
-[Flood Sung](https://github.com/songrotek)
+## [Books]()
 
-# ------------------------------------------------------------------
-# Deep Learning for NLP (based on Andrew Thomas and Keon Kim edition)
-# ------------------------------------------------------------------
-State of the art resources for NLP sequence modeling tasks such as machine translation, image captioning, and dialog.
-
-[Andrew Thomas notes on neural networks, rnn, lstm](https://github.com/andrewt3000/MachineLearning/blob/master/neuralNets.md)  
-[ Kyunghyun Cho's NLP course in NYU](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
-
-## Deep Learning for NLP 
-[Stanford Natural Language Processing](https://www.coursera.org/learn/nlp)  
-Intro NLP course with videos. This has **no deep learning**. But it is a good primer for traditional nlp. Covers topics such as [sentence segmentation](https://github.com/diasks2/pragmatic_segmenter), word tokenizing, word normalization, n-grams, named entity recognition, part of speech tagging.  **Currently not available**  
-
-[Stanford CS 224D: Deep Learning for NLP class](http://cs224d.stanford.edu/syllabus.html)  
-[Richard Socher](https://scholar.google.com/citations?user=FaOcyfMAAAAJ&hl=en). (2016)  Class with syllabus, and slides.  
-Videos: [2015 lectures] (https://www.youtube.com/channel/UCsGC3XXF1ThHwtDo18d7WVw/videos) / [2016 lectures] (https://www.youtube.com/playlist?list=PLcGUo322oqu9n4i0X3cRJgKyVy7OkDdoi)   
-
-[A Primer on Neural Network Models for Natural Language Processing](http://u.cs.biu.ac.il/~yogo/nnlp.pdf)  
-Yoav Goldberg. October 2015. No new info, 75 page summary of state of the art.  
+## [Papers]()
+- [A Primer on Neural Network Models for Natural Language Processing](http://u.cs.biu.ac.il/~yogo/nnlp.pdf) Yoav Goldberg. October 2015. No new info, 75 page summary of state of the art.  
 
 ## Word Vectors
 Resources about word vectors, aka word embeddings, and distributed representations for words.  
