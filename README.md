@@ -26,6 +26,7 @@
   - Sentiment Analysis
     - [doc2vec tutorial](http://rare-technologies.com/doc2vec-tutorial/)
     - [FastText blog](https://research.facebook.com/blog/fasttext/)  
+    - [seq2seq tutorial](http://tensorflow.org/tutorials/seq2seq/index.html) in [TensorFlow](http://tensorflow.org/).   
 
 ## [Courses]()
 - NLP
@@ -44,7 +45,7 @@
   - [Word2Vec source code](https://code.google.com/p/word2vec/)  
   - [FastText Code](https://github.com/facebookresearch/fastText)  
   - [gensim](https://github.com/piskvorky/gensim/)
-    
+  
 ## [Books]()
 
 ## [Papers]()
@@ -65,6 +66,27 @@
     - [Bag of Tricks for Efficient Text Classification](https://arxiv.org/abs/1607.01759)  
   - Neural Machine Translation
     - [Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation](http://arxiv.org/pdf/1406.1078v3.pdf) ([abstract](https://arxiv.org/abs/1406.1078))    
+    - [On Using Very Large Target Vocabulary for Neural Machine Translation](https://arxiv.org/pdf/1412.2007v2.pdf)  
+    - [Sequence to Sequence Learning with Neural Networks](http://arxiv.org/pdf/1409.3215v3.pdf)  ([nips presentation](http://research.microsoft.com/apps/video/?id=239083)). Uses seq2seq to generate translations.  
+    - [Addressing the Rare Word Problem in Neural Machine Translation](https://arxiv.org/pdf/1410.8206v4.pdf) ([abstract](https://arxiv.org/abs/1410.8206))  
+    - [Effective Approaches to Attention-based Neural Machine Translation](http://stanford.edu/~lmthang/data/papers/emnlp15_attn.pdf)  
+    - [Context-Dependent Word Representation for Neural Machine Translation](http://arxiv.org/pdf/1607.00578v1.pdf)  
+    - [Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation](http://arxiv.org/abs/1609.08144)  
+  - Image Captioning
+    - [Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](http://arxiv.org/pdf/1502.03044v3.pdf) Xu et al. 2015 Creates captions by feeding image into a CNN which feeds into hidden state of an RNN that generates the caption. At each time step the RNN outputs next word and the next location to pay attention to via a probability over grid locations. Uses 2 types of attention soft and hard. Soft attention uses gradient descent and backprop and is deterministic. Hard attention selects the element with highest probability. Hard attention uses reinforcement learning, rather than backprop and is stochastic.  
+    - [Open source implementation in TensorFlow](https://research.googleblog.com/2016/09/show-and-tell-image-captioning-open.html)  
+  - Dialog
+    - [Neural Responding Machine for Short-Text Conversation](http://arxiv.org/pdf/1503.02364v2.pdf) Shang et al. 2015  Uses Neural Responding Machine.  Trained on Weibo dataset.  Achieves one round conversations with 75% appropriate responses.  
+    - [A Neural Network Approach to Context-Sensitive Generation of Conversational Responses](http://arxiv.org/pdf/1506.06714v1.pdf)  Sordoni et al. 2015.  Generates responses to tweets. Uses [Recurrent Neural Network Language Model (RLM) architecture of (Mikolov et al., 2010).](http://www.fit.vutbr.cz/research/groups/speech/publi/2010/mikolov_interspeech2010_IS100722.pdf)  source code: [RNNLM Toolkit](http://www.rnnlm.org/)
+    - [Building End-To-End Dialogue Systems Using Generative Hierarchical Neural Network Models](http://arxiv.org/pdf/1507.04808v3.pdf) Serban, Sordoni, Bengio et al. 2015. Extends [hierarchical recurrent encoder-decoder](https://arxiv.org/abs/1507.02221) neural network (HRED).
+    - [Attention with Intention for a Neural Network Conversation Model](http://arxiv.org/pdf/1510.08565v3.pdf)  Yao et al. 2015 Architecture is three recurrent networks: an encoder, an intention network and a decoder.  
+    - [A Hierarchical Latent Variable Encoder-Decoder Model for Generating Dialogues](http://arxiv.org/pdf/1605.06069v3.pdf)  
+    - [A Neural Conversation Model](http://arxiv.org/pdf/1506.05869v3.pdf)  Vinyals, [Le](https://scholar.google.com/citations?user=vfT6-XIAAAAJ) 2015.  Uses LSTM RNNs to generate conversational responses. Uses [seq2seq framework](http://tensorflow.org/tutorials/seq2seq/index.html).  Seq2Seq was originally designed for machine translation and it "translates" a single sentence, up to around 79 words, to a single sentence response, and has no memory of previous dialog exchanges.  Used in Google [Smart Reply feature for Inbox](http://googleresearch.blogspot.co.uk/2015/11/computer-respond-to-this-email.html)  
+    - [Incorporating Copying Mechanism in Sequence-to-Sequence Learning](http://arxiv.org/pdf/1603.06393v3.pdf)  Gu et al. 2016 Proposes CopyNet, builds on seq2seq.  
+    - [A Persona-Based Neural Conversation Model](http://arxiv.org/pdf/1603.06155v2.pdf)  Li et al. 2016  Proposes persona-based models for handling the issue of speaker consistency in neural response generation. Builds on seq2seq.  
+    - [Deep Reinforcement Learning for Dialogue Generation](https://arxiv.org/pdf/1606.01541v3.pdf)  Li et al. 2016. Uses reinforcement learing to generate diverse responses. Trains 2 agents to chat with each other. Builds on seq2seq.   
+    - [Deep learning for chatbots](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/) Article summary of state of the art, and challenges for chatbots.  
+    - [Deep learning for chatbots. part 2](http://www.wildml.com/2016/07/deep-learning-for-chatbots-2-retrieval-based-model-tensorflow/) Implements a retrieval based dialog agent using dual encoder lstm with TensorFlow, based on the Ubuntu dataset [[paper](http://arxiv.org/pdf/1506.08909v3.pdf)] includes [source code](https://github.com/dennybritz/chatbot-retrieval/)  
 
 =================
 The following are not yet consolidated part.
@@ -72,93 +94,10 @@ The following are not yet consolidated part.
 
 
 ##Neural Machine Translation
-In 2014, neural machine translation (NMT) performance became comprable to state of the art statistical machine translation(SMT).  
-
-
-[Neural Machine Translation by jointly learning to align and translate](http://arxiv.org/pdf/1409.0473v6.pdf) ([abstract](https://arxiv.org/abs/1409.0473))     
-Bahdanau, Cho, Bengio 2014.  
-Implements attention mechanism. "Each time the proposed model generates a word in a translation, it
-(soft-)searches for a set of positions in a source sentence where the most relevant information is
-concentrated"  
-Result: "comparable to the existing state-of-the-art phrase-based system on the task of English-to-French translation."  
-[English to French Demo](http://104.131.78.120/)  
-
-[On Using Very Large Target Vocabulary for Neural Machine Translation](https://arxiv.org/pdf/1412.2007v2.pdf)  
-Jean, Cho, Memisevic, Bengio 2014.    
-"we try replacing each [UNK] token with the aligned source word or its most likely translation determined by another word alignment model."  
-Result: English -> German bleu score = 21.59 (target vocabulary of 50,000)    
-
-[Sequence to Sequence Learning with Neural Networks](http://arxiv.org/pdf/1409.3215v3.pdf)  
-Sutskever, Vinyals, Le 2014.  ([nips presentation](http://research.microsoft.com/apps/video/?id=239083)). Uses seq2seq to generate translations.  
-Result: English -> French bleu score = 34.8 (WMT’14 dataset)  
-A key contribution is improvements from reversing the source sentences.  
-[seq2seq tutorial](http://tensorflow.org/tutorials/seq2seq/index.html) in [TensorFlow](http://tensorflow.org/).   
-
-[Addressing the Rare Word Problem in Neural Machine Translation](https://arxiv.org/pdf/1410.8206v4.pdf) ([abstract](https://arxiv.org/abs/1410.8206))  
-Luong, Sutskever, Le, Vinyals, Zaremba 2014    
-Replace UNK words with dictionary lookup.  
-Result: English -> French BLEU score = 37.5.  
-
-[Effective Approaches to Attention-based Neural Machine Translation](http://stanford.edu/~lmthang/data/papers/emnlp15_attn.pdf)  
-Luong, Pham, Manning. 2015  
-2 models of attention: global and local.  
-Result: English -> German 25.9 BLEU points  
-
-[Context-Dependent Word Representation for Neural
-Machine Translation](http://arxiv.org/pdf/1607.00578v1.pdf)  
-Choi, Cho, Bengio 2016  
-"we propose to contextualize the word embedding vectors using a nonlinear bag-of-words representation of the source sentence."  
-"we propose to represent special tokens (such as numbers, proper nouns and acronyms) with typed symbols to facilitate translating those words that are not well-suited to be translated via continuous vectors."   
-
-[Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation](http://arxiv.org/abs/1609.08144)  
-Wu et al. 2016  
-[blog post](https://research.googleblog.com/2016/09/a-neural-network-for-machine.html)  
-"WMT’14 English-to-French, our single model scores 38.95 BLEU"  
-"WMT’14 English-to-German, our single model scores 24.17 BLEU"  
 
 ## Image Captioning
-[Show, Attend and Tell: Neural Image Caption Generation with Visual Attention](http://arxiv.org/pdf/1502.03044v3.pdf)  
-Xu et al. 2015 Creates captions by feeding image into a CNN which feeds into hidden state of an RNN that generates the caption. At each time step the RNN outputs next word and the next location to pay attention to via a probability over grid locations. Uses 2 types of attention soft and hard. Soft attention uses gradient descent and backprop and is deterministic. Hard attention selects the element with highest probability. Hard attention uses reinforcement learning, rather than backprop and is stochastic.  
-
-[Open source implementation in TensorFlow](https://research.googleblog.com/2016/09/show-and-tell-image-captioning-open.html)  
 
 ##Conversation modeling / Dialog
-[Neural Responding Machine for Short-Text Conversation](http://arxiv.org/pdf/1503.02364v2.pdf)  
-Shang et al. 2015  Uses Neural Responding Machine.  Trained on Weibo dataset.  Achieves one round conversations with 75% appropriate responses.  
-
-[A Neural Network Approach to Context-Sensitive Generation of Conversational Responses](http://arxiv.org/pdf/1506.06714v1.pdf)  
-Sordoni et al. 2015.  Generates responses to tweets.   
-Uses [Recurrent Neural Network Language Model (RLM) architecture
-of (Mikolov et al., 2010).](http://www.fit.vutbr.cz/research/groups/speech/publi/2010/mikolov_interspeech2010_IS100722.pdf)  source code: [RNNLM Toolkit](http://www.rnnlm.org/)
-
-[Building End-To-End Dialogue Systems Using Generative Hierarchical Neural Network Models](http://arxiv.org/pdf/1507.04808v3.pdf)  
-Serban, Sordoni, Bengio et al. 2015. Extends [hierarchical recurrent encoder-decoder](https://arxiv.org/abs/1507.02221) neural network (HRED).
-
-[Attention with Intention for a Neural Network Conversation Model](http://arxiv.org/pdf/1510.08565v3.pdf)  
-Yao et al. 2015 Architecture is three recurrent networks: an encoder, an intention network and a decoder.  
-
-[A Hierarchical Latent Variable Encoder-Decoder Model for Generating Dialogues](http://arxiv.org/pdf/1605.06069v3.pdf)  
-Serban, Sordoni, Lowe, Charlin, Pineau, Courville, Bengio 2016  
-Proposes novel architecture: VHRED.  Latent Variable Hierarchical Recurrent Encoder-Decoder  
-Compares favorably against LSTM and HRED.  
-___
-[A Neural Conversation Model](http://arxiv.org/pdf/1506.05869v3.pdf)  
-Vinyals, [Le](https://scholar.google.com/citations?user=vfT6-XIAAAAJ) 2015.  Uses LSTM RNNs to generate conversational responses. Uses [seq2seq framework](http://tensorflow.org/tutorials/seq2seq/index.html).  Seq2Seq was originally designed for machine translation and it "translates" a single sentence, up to around 79 words, to a single sentence response, and has no memory of previous dialog exchanges.  Used in Google [Smart Reply feature for Inbox](http://googleresearch.blogspot.co.uk/2015/11/computer-respond-to-this-email.html)  
-
-[Incorporating Copying Mechanism in Sequence-to-Sequence Learning](http://arxiv.org/pdf/1603.06393v3.pdf)  
-Gu et al. 2016 Proposes CopyNet, builds on seq2seq.  
-
-[A Persona-Based Neural Conversation Model](http://arxiv.org/pdf/1603.06155v2.pdf)  
-Li et al. 2016  Proposes persona-based models for handling the issue of speaker consistency in neural response generation. Builds on seq2seq.  
-
-[Deep Reinforcement Learning for Dialogue Generation](https://arxiv.org/pdf/1606.01541v3.pdf)  
-Li et al. 2016. Uses reinforcement learing to generate diverse responses. Trains 2 agents to chat with each other. Builds on seq2seq.   
-
-___
-[Deep learning for chatbots](http://www.wildml.com/2016/04/deep-learning-for-chatbots-part-1-introduction/)  
-Article summary of state of the art, and challenges for chatbots.  
-[Deep learning for chatbots. part 2](http://www.wildml.com/2016/07/deep-learning-for-chatbots-2-retrieval-based-model-tensorflow/)  
-Implements a retrieval based dialog agent using dual encoder lstm with TensorFlow, based on the Ubuntu dataset [[paper](http://arxiv.org/pdf/1506.08909v3.pdf)] includes [source code](https://github.com/dennybritz/chatbot-retrieval/)  
 
 ##Memory and Attention Models
 Attention mechanisms allows the network to refer back to the input sequence, instead of forcing it to encode all information into one fixed-length vector.  - [Attention and Memory in Deep Learning and NLP](http://www.opendatascience.com/blog/attention-and-memory-in-deep-learning-and-nlp/)  
