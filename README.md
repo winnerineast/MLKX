@@ -13,15 +13,19 @@
 
 ## [Notes and Tutorials]()
 - NLP
+  - General
+    - [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/) and 
   - Word Vectors
     - [Word2Vec tutorial](http://tensorflow.org/tutorials/word2vec/index.html) in [TensorFlow](http://tensorflow.org/)  
     - [Andrew Thomas notes on neural networks](https://github.com/andrewt3000/MachineLearning/blob/master/neuralNets.md)  
     - [Word2vec Parameter Learning Explained](http://www-personal.umich.edu/~ronxin/pdf/w2vexp.pdf)  
-    - [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/) and 
     - [The amazing power of word vectors](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/)
     - [GloVe: Global vectors for word representation](http://nlp.stanford.edu/projects/glove/glove.pdf)  
     - [Evalutaion section led to controversy](http://rare-technologies.com/making-sense-of-word2vec/) 
     - [Glove source code and training data](http://nlp.stanford.edu/projects/glove/) 
+  - Sentiment Analysis
+    - [doc2vec tutorial](http://rare-technologies.com/doc2vec-tutorial/)
+    - [FastText blog](https://research.facebook.com/blog/fasttext/)  
 
 ## [Courses]()
 - NLP
@@ -33,12 +37,14 @@
 ## [People]()
 - [Mikolov](https://scholar.google.com/citations?user=oBu8kMMAAAAJ&hl=en) et al. 2013. Performs well on word similarity and analogy task.  Expands on famous example: King – Man + Woman = Queen  
 - [Yoav Goldberg](https://plus.google.com/114479713299850783539/posts/BYvhAbgG8T2)  
+- [Quoc V. Le](https://scholar.google.com/citations?user=vfT6-XIAAAAJ)
 
 ## [Source Codes]()
 - NLP
-  - Word Vectors
-    - [Word2Vec source code](https://code.google.com/p/word2vec/)  
-  
+  - [Word2Vec source code](https://code.google.com/p/word2vec/)  
+  - [FastText Code](https://github.com/facebookresearch/fastText)  
+  - [gensim](https://github.com/piskvorky/gensim/)
+    
 ## [Books]()
 
 ## [Papers]()
@@ -50,55 +56,24 @@
     - [Distributed Representations of Words and Phrases and their Compositionality](http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf)  
     - [Linguistic Regularities in Continuous Space Word Representations](http://www.aclweb.org/anthology/N13-1090)  
     - [Enriching Word Vectors with Subword Information](https://arxiv.org/pdf/1607.04606v1.pdf)  
-
-
-
-
-
+  - Sentiment Analysis
+    - [Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank](http://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf)  Socher et al. 2013.  Introduces Recursive Neural Tensor Network and dataset: "sentiment treebank."  Includes [demo site](http://nlp.stanford.edu/sentiment/). Uses a parse tree.
+    - [Distributed Representations of Sentences and Documents](http://cs.stanford.edu/~quocle/paragraph_vector.pdf)  
+    - [Deep Recursive Neural Networks for Compositionality in Language](http://www.cs.cornell.edu/~oirsoy/files/nips14drsv.pdf)  
+    - [Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks](https://aclweb.org/anthology/P/P15/P15-1150.pdf)  
+    - [Semi-supervised Sequence Learning](http://arxiv.org/pdf/1511.01432.pdf)  
+    - [Bag of Tricks for Efficient Text Classification](https://arxiv.org/abs/1607.01759)  
+  - Neural Machine Translation
+    - [Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation](http://arxiv.org/pdf/1406.1078v3.pdf) ([abstract](https://arxiv.org/abs/1406.1078))    
 
 =================
 The following are not yet consolidated part.
 =================
 
-___
-[FastText Code](https://github.com/facebookresearch/fastText)  
-
-
-## Sentiment Analysis
-Thought vectors are numeric representations for sentences, paragraphs, and documents.  This concept is used for many text classification tasks such as sentiment analysis.      
-
-[Recursive Deep Models for Semantic Compositionality Over a Sentiment Treebank](http://nlp.stanford.edu/~socherr/EMNLP2013_RNTN.pdf)  
-Socher et al. 2013.  Introduces Recursive Neural Tensor Network and dataset: "sentiment treebank."  Includes [demo site](http://nlp.stanford.edu/sentiment/
-). Uses a parse tree.
-
-[Distributed Representations of Sentences and Documents](http://cs.stanford.edu/~quocle/paragraph_vector.pdf)  
-[Le](https://scholar.google.com/citations?user=vfT6-XIAAAAJ), Mikolov. 2014.  Introduces Paragraph Vector. Concatenates and averages pretrained, fixed word vectors to create vectors for sentences, paragraphs and documents. Also known as paragraph2vec.  Doesn't use a parse tree.  
-Implemented in [gensim](https://github.com/piskvorky/gensim/).  See [doc2vec tutorial](http://rare-technologies.com/doc2vec-tutorial/)
-
-[Deep Recursive Neural Networks for Compositionality in Language](http://www.cs.cornell.edu/~oirsoy/files/nips14drsv.pdf)  
-Irsoy & Cardie. 2014.  Uses Deep Recursive Neural Networks. Uses a parse tree.
-
-[Improved Semantic Representations From Tree-Structured Long Short-Term Memory Networks](https://aclweb.org/anthology/P/P15/P15-1150.pdf)  
-Tai et al. 2015  Introduces Tree LSTM. Uses a parse tree.
-
-[Semi-supervised Sequence Learning](http://arxiv.org/pdf/1511.01432.pdf)  
-Dai, Le 2015  
-Approach: "We present two approaches that use unlabeled data to improve sequence learning with recurrent networks. The first approach is to predict what comes next in a sequence, which is a conventional language model in natural language processing.
-The second approach is to use a sequence autoencoder..."  
-Result: "With pretraining, we are able to train long short term memory recurrent networks up to a few hundred
-timesteps, thereby achieving strong performance in many text classification tasks, such as IMDB, DBpedia and 20 Newsgroups."
-
-[Bag of Tricks for Efficient Text Classification](https://arxiv.org/abs/1607.01759)  
-Joulin, Grave, Bojanowski, Mikolov 2016 Facebook AI Research.  
-"Our experiments show that our fast text classifier fastText is often on par with deep learning classifiers in terms of accuracy, and many orders of magnitude faster for training and evaluation."  
-[FastText blog](https://research.facebook.com/blog/fasttext/)  
-[FastText Code](https://github.com/facebookresearch/fastText)  
 
 ##Neural Machine Translation
 In 2014, neural machine translation (NMT) performance became comprable to state of the art statistical machine translation(SMT).  
 
-[Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation](http://arxiv.org/pdf/1406.1078v3.pdf) ([abstract](https://arxiv.org/abs/1406.1078))    
-Cho et al. 2014 Breakthrough deep learning paper on machine translation. Introduces basic sequence to sequence model which includes two rnns, an encoder for input and a decoder for output.  
 
 [Neural Machine Translation by jointly learning to align and translate](http://arxiv.org/pdf/1409.0473v6.pdf) ([abstract](https://arxiv.org/abs/1409.0473))     
 Bahdanau, Cho, Bengio 2014.  
