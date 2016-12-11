@@ -11,57 +11,58 @@
 
 # Each category becomes longer and longer, I have to use multiple files to contain them. And here I just show you the structure and linkages to the respective files.
 
-## [Nodes]()
-- [Andrew Thomas notes on neural networks](https://github.com/andrewt3000/MachineLearning/blob/master/neuralNets.md)  
+## [Notes and Tutorials]()
+- NLP
+  - Word Vectors
+    - [Word2Vec tutorial](http://tensorflow.org/tutorials/word2vec/index.html) in [TensorFlow](http://tensorflow.org/)  
+    - [Andrew Thomas notes on neural networks](https://github.com/andrewt3000/MachineLearning/blob/master/neuralNets.md)  
+    - [Word2vec Parameter Learning Explained](http://www-personal.umich.edu/~ronxin/pdf/w2vexp.pdf)  
+    - [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/) and 
+    - [The amazing power of word vectors](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/)
+    - [GloVe: Global vectors for word representation](http://nlp.stanford.edu/projects/glove/glove.pdf)  
+    - [Evalutaion section led to controversy](http://rare-technologies.com/making-sense-of-word2vec/) 
+    - [Glove source code and training data](http://nlp.stanford.edu/projects/glove/) 
 
 ## [Courses]()
-- [Kyunghyun Cho's NLP course in NYU](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
-- [Stanford Natural Language Processing](https://www.coursera.org/learn/nlp)  Intro NLP course with videos. This has **no deep learning**. But it is a good primer for traditional nlp.
-- [Stanford CS 224D: Deep Learning for NLP class](http://cs224d.stanford.edu/syllabus.html)  
-- [Richard Socher](https://scholar.google.com/citations?user=FaOcyfMAAAAJ&hl=en). (2016)  Class with syllabus, and slides. Videos: [2015 lectures](https://www.youtube.com/channel/UCsGC3XXF1ThHwtDo18d7WVw/videos) / [2016 lectures](https://www.youtube.com/playlist?list=PLcGUo322oqu9n4i0X3cRJgKyVy7OkDdoi)   
+- NLP
+  - [Kyunghyun Cho's NLP course in NYU](http://www.kyunghyuncho.me/home/courses/ds-ga-3001-fall-2015)
+  - [Stanford Natural Language Processing](https://www.coursera.org/learn/nlp)  Intro NLP course with videos. This has **no deep learning**. But it is a good primer for traditional nlp.
+  - [Stanford CS 224D: Deep Learning for NLP class](http://cs224d.stanford.edu/syllabus.html)  
+  - [Richard Socher](https://scholar.google.com/citations?user=FaOcyfMAAAAJ&hl=en). (2016)  Class with syllabus, and slides. Videos: [2015 lectures](https://www.youtube.com/channel/UCsGC3XXF1ThHwtDo18d7WVw/videos) / [2016 lectures](https://www.youtube.com/playlist?list=PLcGUo322oqu9n4i0X3cRJgKyVy7OkDdoi)   
 
+## [People]()
+- [Mikolov](https://scholar.google.com/citations?user=oBu8kMMAAAAJ&hl=en) et al. 2013. Performs well on word similarity and analogy task.  Expands on famous example: King – Man + Woman = Queen  
+- [Yoav Goldberg](https://plus.google.com/114479713299850783539/posts/BYvhAbgG8T2)  
+
+## [Source Codes]()
+- NLP
+  - Word Vectors
+    - [Word2Vec source code](https://code.google.com/p/word2vec/)  
+  
 ## [Books]()
 
 ## [Papers]()
-- [A Primer on Neural Network Models for Natural Language Processing](http://u.cs.biu.ac.il/~yogo/nnlp.pdf) Yoav Goldberg. October 2015. No new info, 75 page summary of state of the art.  
+- NLP
+  - Word Vectors
+    - [A Primer on Neural Network Models for Natural Language Processing](http://u.cs.biu.ac.il/~yogo/nnlp.pdf) Yoav Goldberg. October 2015. No new info, 75 page summary of state of the art.  
+    - [A neural probabilistic language model](http://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf) Bengio 2003. Seminal paper on word vectors.  
+    - [Efficient Estimation of Word Representations in Vector Space](http://arxiv.org/pdf/1301.3781v3.pdf)  
+    - [Distributed Representations of Words and Phrases and their Compositionality](http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf)  
+    - [Linguistic Regularities in Continuous Space Word Representations](http://www.aclweb.org/anthology/N13-1090)  
+    - [Enriching Word Vectors with Subword Information](https://arxiv.org/pdf/1607.04606v1.pdf)  
 
-## Word Vectors
-Resources about word vectors, aka word embeddings, and distributed representations for words.  
-Word vectors are numeric representations of words where similar words have similar vectors. Word vectors are often used as input to deep learning systems. This process is sometimes called pretraining. 
 
-[A neural probabilistic language model.](http://papers.nips.cc/paper/1839-a-neural-probabilistic-language-model.pdf)  
-Bengio 2003. Seminal paper on word vectors.  
 
-___
-[Efficient Estimation of Word Representations in Vector Space](http://arxiv.org/pdf/1301.3781v3.pdf)  
-Mikolov et al. 2013. Word2Vec generates word vectors in an unsupervised way by attempting to predict words from a corpus. Describes Continuous Bag-of-Words (CBOW) and Continuous Skip-gram models for learning word vectors.  
-Skip-gram takes center word and predict outside words. Skip-gram is better for large datasets.  
-CBOW - takes outside words and predict the center word. CBOW is better for smaller datasets.  
 
-[Distributed Representations of Words and Phrases and their Compositionality]
-(http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf)  
-Mikolov et al. 2013. Learns vectors for phrases such as "New York Times." Includes optimizations for skip-gram: heirachical softmax, and negative sampling. Subsampling frequent words. (i.e. frequent words like "the" are skipped periodically to speed things up and improve vector for less frequently used words)  
 
-[Linguistic Regularities in Continuous Space Word Representations](http://www.aclweb.org/anthology/N13-1090)  
-[Mikolov](https://scholar.google.com/citations?user=oBu8kMMAAAAJ&hl=en) et al. 2013. Performs well on word similarity and analogy task.  Expands on famous example: King – Man + Woman = Queen  
-[Word2Vec source code](https://code.google.com/p/word2vec/)  
-[Word2Vec tutorial](http://tensorflow.org/tutorials/word2vec/index.html) in [TensorFlow](http://tensorflow.org/)  
 
-[word2vec Parameter Learning Explained](http://www-personal.umich.edu/~ronxin/pdf/w2vexp.pdf)  
-Rong 2014  
-
-Articles explaining word2vec: [Deep Learning, NLP, and Representations](http://colah.github.io/posts/2014-07-NLP-RNNs-Representations/) and 
-[The amazing power of word vectors](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/)
+=================
+The following are not yet consolidated part.
+=================
 
 ___
-[GloVe: Global vectors for word representation](http://nlp.stanford.edu/projects/glove/glove.pdf)  
-Pennington, Socher, Manning. 2014. Creates word vectors and relates word2vec to matrix factorizations.  [Evalutaion section led to controversy](http://rare-technologies.com/making-sense-of-word2vec/) by [Yoav Goldberg](https://plus.google.com/114479713299850783539/posts/BYvhAbgG8T2)  
-[Glove source code and training data](http://nlp.stanford.edu/projects/glove/) 
-
-___
-[Enriching Word Vectors with Subword Information](https://arxiv.org/pdf/1607.04606v1.pdf)  
-Bojanowski, Grave, Joulin, Mikolov 2016  
 [FastText Code](https://github.com/facebookresearch/fastText)  
+
 
 ## Sentiment Analysis
 Thought vectors are numeric representations for sentences, paragraphs, and documents.  This concept is used for many text classification tasks such as sentiment analysis.      
